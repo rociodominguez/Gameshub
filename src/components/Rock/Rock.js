@@ -1,6 +1,6 @@
 import "./Rock.css";
 
-const initializeHangman = () => {
+const initializeRock = () => {
   const app = document.getElementById("app");
 
   const title = document.createElement("h1");
@@ -108,4 +108,4 @@ const initializeHangman = () => {
   };
 };
 
-export default initializeHangman;
+export default initializeRock;
