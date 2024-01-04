@@ -1,6 +1,5 @@
 import clearContent from '../../../utils/clearContent';
 
-
 const createHomePage = () => {
     const main = document.getElementById("app");
     clearContent();
