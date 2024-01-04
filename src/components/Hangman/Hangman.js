@@ -1,6 +1,7 @@
 import './Hangman.css'
 
 const initializeHangman = () => {
+
     const ARRAY_WORDS = ['madera', 'chocolate', 'fresa', 'autocaravana', 'kiwi', 'trabajo', 'viernes', 'zoologico', 'tilde', 'paraguas'];
     
     let chosenWord = '';

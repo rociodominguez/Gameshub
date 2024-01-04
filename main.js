@@ -1,23 +1,17 @@
 import initializeHangman from './src/components/Hangman/Hangman';
 import initializeRock from './src/components/Rock/Rock';
 import initializeTrivial from './src/components/Trivial/Trivial';
+import createHomePage from './src/components/Home/Home';
 
-const gameContainer = document.getElementById('app');
-const hangmanLink = document.getElementById('hangman-link');
-const rockLink = document.getElementById('rock-link');
-const trivialLink = document.getElementById('trivial-link');
+createHomePage();
 
-hangmanLink.addEventListener('click', () => {
-  gameContainer.innerHTML = '';
-  initializeHangman(gameContainer);
+document.querySelector("#hangman-link").addEventListener("click", () => {
+  initializeHangman();
+});
+document.querySelector("#rock-link").addEventListener("click", () => {
+  initializeRock();
 });
 
-rockLink.addEventListener('click', () => {
-  gameContainer.innerHTML = '';
-  initializeRock(gameContainer);
-});
-
-trivialLink.addEventListener('click', () => {
-  gameContainer.innerHTML = '';
-  initializeTrivial(gameContainer);
+document.querySelector("#trivial-link").addEventListener("click", () => {
+  initializeTrivial();
 });
