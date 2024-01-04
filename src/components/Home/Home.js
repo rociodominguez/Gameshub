@@ -8,15 +8,15 @@ const createHomePage = () => {
     title.textContent = '¡Bienvenido a mi hub!';
 
     const hangmanButton = document.createElement('button');
-    hangmanButton.textContent = 'Juego del Ahorcado';
+    hangmanButton.textContent = 'El Ahorcado';
     hangmanButton.id = 'hangman-link';
 
     const rockButton = document.createElement('button');
-    rockButton.textContent = 'Juego de Piedra, Papel o Tijera';
+    rockButton.textContent = 'Piedra, Papel o Tijera';
     rockButton.id = 'rock-link';
 
     const trivialButton = document.createElement('button');
-    trivialButton.textContent = 'Juego Trivial';
+    trivialButton.textContent = 'Trivial';
     trivialButton.id = 'trivial-link';
 
     main.appendChild(title);
