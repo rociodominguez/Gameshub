@@ -1,21 +1,44 @@
 import initializeHangman from './src/components/Hangman/Hangman';
 import initializeRock from './src/components/Rock/Rock';
 import initializeTrivial from './src/components/Trivial/Trivial';
-import createHomePage from './src/components/Home/Home';
-import clearContent from './utils/clearContent';
+import initializeHome from './src/components/Home/Home'
 
-createHomePage();
+const app$$ = document.querySelector("#app");
+const initialApp = () => {
+   app$$.innerHTML = `
+   <main id="main"></main>
+   `;
+   initializeHome();
+};
+initialApp();
 
-document.querySelector("#hangman-link").addEventListener("click", () => {
-  clearContent();
+const main$$ = document.querySelector('#main')
+const printHangmanGame = (event) => {
+  event.preventDefault();
+  const linkHref = event.target.href;
+  main$$.innerHTML = '';
   initializeHangman();
-});
-document.querySelector("#rock-link").addEventListener("click", () => {
-  clearContent()
-  initializeRock();
-});
+}
 
-document.querySelector("#trivial-link").addEventListener("click", () => {
-  clearContent()
+const printRockGame = (event) => {
+  event.preventDefault();
+  const linkHref = event.target.href;
+  main$$.innerHTML = '';
+  initializeRock();
+}
+
+const printTrivialGame = (event) => {
+  event.preventDefault();
+  const linkHref = event.target.href;
+  main$$.innerHTML = '';
   initializeTrivial();
-});
+}
+
+const clickHangman = document.querySelector('#hangman-link');
+clickHangman.addEventListener('click', printHangmanGame);
+
+const clickRock = document.querySelector('#rock-link');
+clickRock.addEventListener('click', printRockGame);
+
+const clickTrivial = document.querySelector('#trivial-link');
+clickTrivial.addEventListener('click', printTrivialGame);

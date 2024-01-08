@@ -1,28 +1,22 @@
-import clearContent from '../../../utils/clearContent';
-
-const createHomePage = () => {
-    const main = document.getElementById("app");
-    clearContent();
-
-    const title = document.createElement('h1');
-    title.textContent = '¡Bienvenido a mi hub!';
-
-    const hangmanButton = document.createElement('button');
-    hangmanButton.textContent = 'El Ahorcado';
-    hangmanButton.id = 'hangman-link';
-
-    const rockButton = document.createElement('button');
-    rockButton.textContent = 'Piedra, Papel o Tijera';
-    rockButton.id = 'rock-link';
-
-    const trivialButton = document.createElement('button');
-    trivialButton.textContent = 'Trivial';
-    trivialButton.id = 'trivial-link';
-
-    main.appendChild(title);
-    main.appendChild(hangmanButton);
-    main.appendChild(rockButton);
-    main.appendChild(trivialButton);
+const initializeHome = () => {
+  const main = document.querySelector('#main');
+  main.innerHTML = 
+    `
+    <h1>Bienvenidos a mi hub!</h1>
+      <nav>
+        <ul class="navbar">
+          <li>
+            <a href="#" id="hangman-link">El ahorcado</a>
+          </li>
+          <li>
+            <a href="#" id="rock-link">Piedra, papel o tijera</a>
+          </li>
+          <li>
+            <a href="#" id="trivial-link">Test de personalidad</a>
+          </li>
+          </ul>
+        </nav>
+  `;
 };
 
-export default createHomePage;
+export default initializeHome;
