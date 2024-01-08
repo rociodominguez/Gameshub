@@ -6,13 +6,13 @@ const initializeHome = () => {
       <nav>
         <ul class="navbar">
           <li>
-            <a href="#" id="hangman-link">El ahorcado</a>
+            <a href="/hangman" id="hangman-link">El ahorcado</a>
           </li>
           <li>
-            <a href="#" id="rock-link">Piedra, papel o tijera</a>
+            <a href="/rock" id="rock-link">Piedra, papel o tijera</a>
           </li>
           <li>
-            <a href="#" id="trivial-link">Test de personalidad</a>
+            <a href="/test" id="trivial-link">Test de personalidad</a>
           </li>
           </ul>
         </nav>
