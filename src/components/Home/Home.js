@@ -1,6 +1,6 @@
 const initializeHome = () => {
-  const main = document.querySelector('#main');
-  main.innerHTML = 
+  const header = document.querySelector('#header');
+  header.innerHTML = 
     `
     <h1>Bienvenidos a mi hub!</h1>
       <nav>
