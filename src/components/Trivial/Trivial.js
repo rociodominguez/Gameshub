@@ -1,6 +1,13 @@
 import "./Trivial.css";
 
 const initializeTrivial = () => {
+
+  const app = document.getElementById("main");
+  app.innerHTML = '';
+  const trivialGameContainer = document.createElement('div');
+  trivialGameContainer.classList.add('trivial-game-container');
+  app.appendChild(trivialGameContainer);
+
   const ARRAY_QUESTIONS = [
     {
       question:
@@ -125,11 +132,11 @@ const initializeTrivial = () => {
     restartTest.textContent = 'Reiniciar Test';
     restartTest.addEventListener('click', handleRestart);
     restartTest.style.display = 'block';
-    document.body.appendChild(restartTest);
-
     resultContainer.appendChild(personalityNumber);
     resultContainer.appendChild(personalityDefinition);
     resultContainer.appendChild(restartTest);
+
+    trivialGameContainer.appendChild(resultContainer);
 
     const questionContainer = document.getElementById('question-container');
     if (questionContainer) {
@@ -160,6 +167,7 @@ const initializeTrivial = () => {
     }
   
     questionPosition = 0;
+    app.innerHTML = '';
     questionContainer();
   };
 
@@ -183,7 +191,7 @@ const initializeTrivial = () => {
     if (secondQuestionContainer) {
       secondQuestionContainer.replaceWith(questionDiv);
     } else {
-      document.body.appendChild(questionDiv);
+      app.appendChild(questionDiv);
     }
   };
 

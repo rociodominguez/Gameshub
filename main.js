@@ -1,35 +1,35 @@
 import initializeHangman from './src/components/Hangman/Hangman';
 import initializeRock from './src/components/Rock/Rock';
 import initializeTrivial from './src/components/Trivial/Trivial';
-import initializeHome from './src/components/Home/Home'
+import initializeHome from './src/components/Home/Home';
 
 const app$$ = document.querySelector("#app");
+
 const initialApp = () => {
    app$$.innerHTML = `
-   <main id="main"></main>
+   <div id="main"></div>
    `;
    initializeHome();
 };
+
 initialApp();
 
-const main$$ = document.querySelector('#main')
+const main$$ = document.querySelector('#main');
+
 const printHangmanGame = (event) => {
   event.preventDefault();
-  const linkHref = event.target.href;
   main$$.innerHTML = '';
   initializeHangman();
 }
 
 const printRockGame = (event) => {
   event.preventDefault();
-  const linkHref = event.target.href;
   main$$.innerHTML = '';
   initializeRock();
 }
 
 const printTrivialGame = (event) => {
   event.preventDefault();
-  const linkHref = event.target.href;
   main$$.innerHTML = '';
   initializeTrivial();
 }

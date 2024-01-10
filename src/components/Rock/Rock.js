@@ -1,7 +1,9 @@
 import "./Rock.css";
 
 const initializeRock = () => {
-  const app = document.getElementById("app");
+  const app$$ = document.querySelector('#main');
+  const rockGameContainer = document.createElement('div');
+  rockGameContainer.classList.add('rock-game-container');
 
   const title = document.createElement("h1");
   title.textContent = "Piedra, papel o tijera";
@@ -24,9 +26,6 @@ const initializeRock = () => {
   const result = document.createElement("div");
   result.classList.add("result");
 
-  choices.append(rockBtn, paperBtn, scissorsBtn);
-  app.append(title, choices, result);
-
   let rockPlayerWins = parseInt(localStorage.getItem("rock-playerWins")) || 0;
   let rockComputerWins = parseInt(localStorage.getItem("rock-computerWins")) || 0;
 
@@ -36,7 +35,11 @@ const initializeRock = () => {
   const computerWinsDisplay = document.createElement("p");
   computerWinsDisplay.textContent = `Victorias del oponente: ${rockComputerWins}`;
 
-  app.append(playerWinsDisplay, computerWinsDisplay);
+
+  choices.append(rockBtn, paperBtn, scissorsBtn);
+  rockGameContainer.append(title, choices, result, playerWinsDisplay, computerWinsDisplay);
+  app$$.appendChild(rockGameContainer);
+  app$$.append(playerWinsDisplay, computerWinsDisplay);
 
   const buttons = document.querySelectorAll(".btn");
 

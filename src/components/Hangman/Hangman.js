@@ -156,9 +156,10 @@ const initializeHangman = () => {
 
     selectRandomWord();
 
+    const app$$ = document.querySelector("#main");
     const hangmanGameContainer = document.createElement('div');
     hangmanGameContainer.classList.add('hangman-game-container');
-    document.body.append(hangmanGameContainer);
+    app$$.appendChild(hangmanGameContainer);
 
     const wordDisplay = createWordDisplay(hangmanGameContainer);
     const attemptsLeft = createAttemptsDisplay(hangmanGameContainer);
