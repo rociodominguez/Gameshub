@@ -20,19 +20,19 @@ const printHangmanGame = (event) => {
   event.preventDefault();
   main$$.innerHTML = '';
   initializeHangman();
-}
+};
 
 const printRockGame = (event) => {
   event.preventDefault();
   main$$.innerHTML = '';
   initializeRock();
-}
+};
 
 const printTrivialGame = (event) => {
   event.preventDefault();
   main$$.innerHTML = '';
   initializeTrivial();
-}
+};
 
 const clickHangman = document.querySelector('#hangman-link');
 clickHangman.addEventListener('click', printHangmanGame);

@@ -129,9 +129,9 @@ const initializeTrivial = () => {
     personalityDefinition.textContent = personalityDefinitions[randomPersonality];
 
     const restartTest = document.createElement('button');
+    restartTest.id = 'restart-button'
     restartTest.textContent = 'Reiniciar Test';
     restartTest.addEventListener('click', handleRestart);
-    restartTest.style.display = 'block';
     resultContainer.appendChild(personalityNumber);
     resultContainer.appendChild(personalityDefinition);
     resultContainer.appendChild(restartTest);

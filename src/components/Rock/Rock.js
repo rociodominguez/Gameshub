@@ -5,8 +5,8 @@ const initializeRock = () => {
   const rockGameContainer = document.createElement('div');
   rockGameContainer.classList.add('rock-game-container');
 
-  const title = document.createElement("h1");
-  title.textContent = "Piedra, papel o tijera";
+  const title = document.createElement("h4");
+  title.textContent = "Elige tu ganador";
 
   const choices = document.createElement("div");
   choices.classList.add("choices");
@@ -35,11 +35,9 @@ const initializeRock = () => {
   const computerWinsDisplay = document.createElement("p");
   computerWinsDisplay.textContent = `Victorias del oponente: ${rockComputerWins}`;
 
-
   choices.append(rockBtn, paperBtn, scissorsBtn);
   rockGameContainer.append(title, choices, result, playerWinsDisplay, computerWinsDisplay);
   app$$.appendChild(rockGameContainer);
-  app$$.append(playerWinsDisplay, computerWinsDisplay);
 
   const buttons = document.querySelectorAll(".btn");
 

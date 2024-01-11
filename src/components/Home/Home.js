@@ -1,21 +1,24 @@
+import './Home.css'
+
 const initializeHome = () => {
-  const header = document.querySelector('#header');
-  header.innerHTML = 
-    `
-    <h1>Bienvenidos a mi hub!</h1>
-      <nav>
-        <ul class="navbar">
+  const header = document.querySelector("#header");
+  header.innerHTML = `
+    <div class="home">
+      <h1>Games Hub</h1>
+      <nav class="navbar">
+        <ul>
           <li>
-            <a href="/hangman" id="hangman-link">El ahorcado</a>
+            <button class="btn" id="hangman-link">El ahorcado</button>
           </li>
           <li>
-            <a href="/rock" id="rock-link">Piedra, papel o tijera</a>
+            <button class="btn" id="rock-link">Piedra, papel o tijera</button>
           </li>
           <li>
-            <a href="/test" id="trivial-link">Test de personalidad</a>
+            <button class="btn" id="trivial-link">Test de personalidad</button>
           </li>
-          </ul>
-        </nav>
+        </ul>
+      </nav>
+    </div>
   `;
 };
 

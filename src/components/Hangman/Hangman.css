@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
 }
   #word-display,
   #attempts-left,
@@ -11,12 +10,56 @@
   #guess-button,
   #reset-button {
     margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+#word-display {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+#attempts-left, #word-display {
+    font-family: "Pixel2";
+
 }
 
 #guess-button,
 #reset-button {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    padding: 7px;
+    font-family: "Pixel";
+    height: 35px;
+    margin: 5px;
+    width: 120px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: solid var(--glitch-pink) 1px;
+    font-size: 16px;
+    color: var(--text-color);
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #2e2d2d, #212121);
+    -webkit-box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+      inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
+    box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+      inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
+}
+
+#letter-input {
+    border-radius: 10px;
+    outline: 2px solid var(--glitch-blue);
+    border: 0;
+    background-color: var(--bg-color);
+    outline-offset: 3px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+    color: var(--text-color);
+}
+
+#letter-input:focus {
+    outline-offset: 5px;
 }
