@@ -60,6 +60,11 @@ const initializeHangman = () => {
       handleGuess(letter);
     });
 
+    guessButton.addEventListener('touchend', () => {
+      const letter = letterInput.value.trim();
+      handleGuess(letter);
+    });
+
     letterInput.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
         const letter = letterInput.value.trim();
