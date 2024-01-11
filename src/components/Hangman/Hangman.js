@@ -55,17 +55,15 @@ const initializeHangman = () => {
   };
 
   const setupInputEvents = (letterInput, guessButton) => {
-    const handleGuessEvent = () => {
+    guessButton.addEventListener('click', () => {
       const letter = letterInput.value.trim();
       handleGuess(letter);
-    };
-  
-    guessButton.addEventListener('click', handleGuessEvent);
-    guessButton.addEventListener('touchend', handleGuessEvent);
-  
+    });
+
     letterInput.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        handleGuessEvent();
+        const letter = letterInput.value.trim();
+        handleGuess(letter);
       }
     });
   };
