@@ -181,6 +181,7 @@ const initializeTrivial = () => {
 
     const answers = ARRAY_QUESTIONS[questionPosition].options.map((answer, index) => {
       const answerButton = document.createElement('button');
+      answerButton.id = "trivial-btn";
       answerButton.textContent = answer;
       answerButton.addEventListener('click', () => selectedAnswer(index));
       questionDiv.appendChild(answerButton);

@@ -19,7 +19,7 @@ h1 {
   margin-top: 30px;
 }
 
-.btn {
+.home-btn {
   --border-color: linear-gradient(-45deg, var(--glitch-orange), var(--glitch-pink), var(--glitch-blue));
   --border-width: 0.125em;
   --curve-size: 0.5em;
@@ -48,14 +48,14 @@ h1 {
   font-family: "Pixel2";
 }
 
-.btn::after,
-.btn::before {
+.home-btn::after,
+.home-btn::before {
   content: "";
   position: absolute;
   inset: 0;
 }
 
-.btn::before {
+.home-btn::before {
   background: var(--border-color);
   background-size: 300% 300%;
   animation: move-bg7234 5s ease infinite;
@@ -76,7 +76,7 @@ h1 {
   }
 }
 
-.btn::after {
+.home-btn::after {
   background: var(--bg);
   z-index: -1;
   clip-path: polygon(
@@ -92,7 +92,7 @@ h1 {
   transition: clip-path 500ms;
 }
 
-.btn:where(:hover, :focus)::after {
+.home-btn:where(:hover, :focus)::after {
   clip-path: polygon(
     calc(100% - var(--border-width))
       calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
@@ -108,6 +108,18 @@ h1 {
   transition: 200ms;
 }
 
-.btn:where(:hover, :focus) {
+.home-btn:where(:hover, :focus) {
   color: var(--text-color);
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 55px;
+  }
+  
+  .navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

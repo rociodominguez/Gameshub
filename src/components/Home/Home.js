@@ -8,13 +8,13 @@ const initializeHome = () => {
       <nav class="navbar">
         <ul>
           <li>
-            <button class="btn" id="hangman-link">El ahorcado</button>
+            <button class="home-btn" id="hangman-link">El ahorcado</button>
           </li>
           <li>
-            <button class="btn" id="rock-link">Piedra, papel o tijera</button>
+            <button class="home-btn" id="rock-link">Piedra, papel o tijera</button>
           </li>
           <li>
-            <button class="btn" id="trivial-link">Test de personalidad</button>
+            <button class="home-btn" id="trivial-link">Test de personalidad</button>
           </li>
         </ul>
       </nav>
