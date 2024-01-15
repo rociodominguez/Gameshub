@@ -1,7 +1,7 @@
 import './Hangman.css';
 
 const initializeHangman = () => {
-  const ARRAY_WORDS = ['madera', 'chocolate', 'fresa', 'autocaravana', 'kiwi', 'trabajo', 'viernes', 'zoologico', 'tilde', 'paraguas'];
+  const ARRAY_WORDS = ['madera', 'chocolate', 'fresa', 'autocaravana', 'kiwi', 'trabajo', 'viernes', 'zoologico', 'tilde', 'paraguas', 'libro', 'luz', 'helado', 'casa', 'sentido'];
 
   let chosenWord = '';
   let attemptedWords = [];
@@ -54,6 +54,13 @@ const initializeHangman = () => {
     return resetButton;
   };
 
+  const createUsedLettersDisplay = (parentElement) => {
+    const usedLettersDisplay = document.createElement('div');
+    usedLettersDisplay.id = 'used-letters-display';
+    parentElement.appendChild(usedLettersDisplay);
+    return usedLettersDisplay;
+  };
+
   const setupInputEvents = (letterInput, guessButton) => {
     guessButton.addEventListener('click', () => {
       const letter = letterInput.value.trim();
@@ -74,6 +81,7 @@ const initializeHangman = () => {
     selectRandomWord();
     showGuessedWord(guessedWord);
     updateAttemptsDisplay();
+    updateUsedLettersDisplay();
     document.getElementById('letter-input').disabled = false;
     document.getElementById('guess-button').disabled = false;
   };
@@ -83,11 +91,7 @@ const initializeHangman = () => {
       if (letter.length === 1 && letter.match(/[a-z]/)) {
         guessLetter(letter);
         document.getElementById('letter-input').value = '';
-      } else {
-        alert('Introduce una letra');
       }
-    } else {
-      alert('¡Se acabaron los intentos! Has perdido');
     }
   };
 
@@ -108,6 +112,7 @@ const initializeHangman = () => {
       }
 
       updateAttemptsDisplay();
+      updateUsedLettersDisplay();
       showGuessedWord(guessedWord);
 
       if (checkWin()) {
@@ -115,8 +120,6 @@ const initializeHangman = () => {
       } else if (remainingAttempts === 0) {
         handleGameLost();
       }
-    } else {
-      alert('¡Ya has probado esta letra! Prueba con otra');
     }
   };
 
@@ -126,6 +129,11 @@ const initializeHangman = () => {
     const isGameOver = remainingAttempts === 0;
     document.getElementById('letter-input').disabled = isGameOver;
     document.getElementById('guess-button').disabled = isGameOver;
+  };
+
+  const updateUsedLettersDisplay = () => {
+    const usedLettersDisplay = document.querySelector('#used-letters-display');
+    usedLettersDisplay.textContent = `Letras usadas: ${attemptedWords.join(', ')}`;
   };
 
   const showGuessedWord = (guessedWord) => {
@@ -138,12 +146,10 @@ const initializeHangman = () => {
   };
 
   const handleGameWon = () => {
-    alert('¡Felicidades! ¡Has ganado!');
     disableInputAndButton();
   };
 
   const handleGameLost = () => {
-    alert('¡Se acabaron los intentos! ¡Has perdido!');
     disableInputAndButton();
   };
 
@@ -161,6 +167,7 @@ const initializeHangman = () => {
 
   const wordDisplay = createWordDisplay(hangmanGameContainer);
   const attemptsLeft = createAttemptsDisplay(hangmanGameContainer);
+  const usedLettersDisplay = createUsedLettersDisplay(hangmanGameContainer);
   const letterInput = createLetterInput(hangmanGameContainer);
   const guessButton = createGuessButton(hangmanGameContainer);
   const resetButton = createResetButton(hangmanGameContainer);

@@ -64,3 +64,9 @@
 #letter-input:focus {
     outline-offset: 5px;
 }
+
+#used-letters-display {
+    color: var(--text-color);
+    font-family: "Pixel2";
+    margin-bottom: 1rem;
+}
