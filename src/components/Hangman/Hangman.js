@@ -10,7 +10,7 @@ const initializeHangman = () => {
 
   const selectRandomWord = () => {
     const randomIndex = Math.floor(Math.random() * ARRAY_WORDS.length);
-    chosenWord = ARRAY_WORDS[randomIndex].toLowerCase();
+    chosenWord = ARRAY_WORDS[randomIndex];
     guessedWord = Array(chosenWord.length).fill('_');
   };
 
@@ -96,7 +96,6 @@ const initializeHangman = () => {
   };
 
   const guessLetter = (letter) => {
-    letter = letter.toLowerCase();
     const isLetterInWord = chosenWord.includes(letter);
 
     if (!attemptedWords.includes(letter)) {
