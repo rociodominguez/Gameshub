@@ -1,7 +1,7 @@
 import './Hangman.css';
 
 const initializeHangman = () => {
-  const ARRAY_WORDS = ['madera', 'chocolate', 'fresa', 'autocaravana', 'kiwi', 'trabajo', 'viernes', 'zoologico', 'tilde', 'paraguas', 'libro', 'luz', 'helado', 'casa', 'sentido'];
+  const ARRAY_WORDS = ['MADERA', 'CHOCOLATE', 'FRESA', 'AUTOCARAVANA', 'KIWI', 'TRABAJO', 'VIERNES', 'ZOOLOGICO', 'TILDE', 'PARAGUAS', 'LIBRO', 'LUZ', 'HELADO', 'CASA', 'SENTIDO'];
 
   let chosenWord = '';
   let attemptedWords = [];
@@ -63,13 +63,13 @@ const initializeHangman = () => {
 
   const setupInputEvents = (letterInput, guessButton) => {
     guessButton.addEventListener('click', () => {
-      const letter = letterInput.value.trim();
+      const letter = letterInput.value.trim().toUpperCase();
       handleGuess(letter);
     });
 
     letterInput.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        const letter = letterInput.value.trim();
+        const letter = letterInput.value.trim().toUpperCase();
         handleGuess(letter);
       }
     });
@@ -88,7 +88,7 @@ const initializeHangman = () => {
 
   const handleGuess = (letter) => {
     if (remainingAttempts > 0) {
-      if (letter.length === 1 && letter.match(/[a-z]/)) {
+      if (letter.length === 1 && letter.match(/[A-Z]/)) {
         guessLetter(letter);
         document.getElementById('letter-input').value = '';
       }
