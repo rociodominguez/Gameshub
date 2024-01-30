@@ -37,12 +37,12 @@ h1 {
   text-transform: uppercase;
   box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.6);
   clip-path: polygon(
-    0% var(--curve-size),
-    var(--curve-size) 0,
-    100% 0,
-    100% calc(100% - var(--curve-size)),
-    calc(100% - var(--curve-size)) 100%,
-    0 100%
+      0% var(--curve-size),
+      var(--curve-size) 0,
+      100% 0,
+      100% calc(100% - var(--curve-size)),
+      calc(100% - var(--curve-size)) 100%,
+      0 100%
   );
   transition: color 250ms;
   font-family: "Pixel2";
@@ -64,15 +64,15 @@ h1 {
 
 @keyframes move-bg7234 {
   0% {
-    background-position: 31% 0%;
+      background-position: 31% 0%;
   }
 
   50% {
-    background-position: 70% 100%;
+      background-position: 70% 100%;
   }
 
   100% {
-    background-position: 31% 0%;
+      background-position: 31% 0%;
   }
 }
 
@@ -80,29 +80,29 @@ h1 {
   background: var(--bg);
   z-index: -1;
   clip-path: polygon(
-    var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
-    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width))
+      var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+      calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width))
       calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
       calc(100% - var(--border-width)),
-    var(--border-width) calc(100% - var(--border-width))
+      var(--border-width) calc(100% - var(--border-width))
   );
   transition: clip-path 500ms;
 }
 
 .home-btn:where(:hover, :focus)::after {
   clip-path: polygon(
-    calc(100% - var(--border-width))
+      calc(100% - var(--border-width))
       calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width))
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width))
       calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
       calc(100% - var(--border-width)),
-    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
       calc(100% - var(--border-width))
   );
   transition: 200ms;
@@ -112,14 +112,17 @@ h1 {
   color: var(--text-color);
 }
 
-@media screen and (min-width: 768px) {
+
+@media screen and (max-width: 767px) {
   h1 {
-    font-size: 55px;
+      font-size: 30px;
   }
-  
+
   .navbar ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+      margin-top: 15px;
+  }
+
+  .home-btn {
+      font-size: 13px;
   }
 }
