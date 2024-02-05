@@ -113,16 +113,22 @@ h1 {
 }
 
 
-@media screen and (max-width: 767px) {
-  h1 {
-      font-size: 30px;
+@media screen and (min-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .navbar ul {
-      margin-top: 15px;
+  .navbar ul li {
+    margin: 0 10px;
+  }
+
+  .home {
+    margin-top: 60px;
   }
 
   .home-btn {
-      font-size: 13px;
+    font-size: 15px;
   }
 }
+
